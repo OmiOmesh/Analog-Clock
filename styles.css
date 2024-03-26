@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #efebeb;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #212121;
+    
+  }
+  
+  @-webkit-keyframes pulse {
+    0% { box-shadow:0 0 8px #eae5e7, inset 0 0 8px #ebe6e8; }
+    50% { box-shadow:0 0 25px #ce638e, inset 0 0 22px #b06784; }
+    100% { box-shadow:0 0 8px #eeeaec, inset 0 0 8px #f7f2f4; }
+  }
+
+  .container {
+    position: relative;
+    
+  }
+
+  .clock{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 4.5px solid rgb(246, 254, 246);
+    box-shadow: 0px 0px 30px rgba(169, 155, 155, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.glow{
+  -webkit-animation: pulse 2s linear 1s infinite;
+}
+
+
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 24px;
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
+
+}
+ 
+  
+.alarm-controls {
+    display: flex;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  input[type="time"] {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    padding: 4px;
+  }
+  
+  button {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    padding: 4px 8px;
+    margin-left: 5px;
+    cursor: pointer;
+    background-color: #2980b9;
+    color: #f8f7f7;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #3b93ca;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
